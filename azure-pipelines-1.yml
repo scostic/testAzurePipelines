@@ -4,7 +4,7 @@ jobs:
   pool:
     vmImage: 'ubuntu-latest'
   environment:
-    name: linu-vm-environment
+    name: linux-vm-environment
     resourceType: VirtualMachine
   strategy:
     runOnce:
