@@ -11,3 +11,4 @@ jobs:
       deploy:
         steps:
         - script: sudo apt-get update
+        - script: sudo apt-get upgrade
