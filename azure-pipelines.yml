@@ -15,7 +15,6 @@ steps:
     targetType: 'inline'
     script: |
       # Write your commands here
-      
       apt-get update
 
 - script: |
