@@ -1,0 +1,28 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'SpaceCloudGR-scostic'
+    subscriptionId: '4060d370-498f-409c-a563-c62076a279fe'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'RG-scostic'
+    location: 'West Europe'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://raw.githubusercontent.com/scostic/testRepo/main/CreateVM/azuredeploy.json'
+    deploymentMode: 'Incremental'
+    deploymentName: 'testAzurePipelines-mysql'
